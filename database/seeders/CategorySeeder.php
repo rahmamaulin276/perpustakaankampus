@@ -2,23 +2,26 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 
-
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        Category::insert([
-            ['nama_kategori' => 'Teknologi'],
-            ['nama_kategori' => 'Sains'],
-            ['nama_kategori' => 'Sastra'],
+        Category::create([
+            'nama_kategori' => 'Teknologi',
+            'deskripsi' => 'Kategori buku tentang teknologi dan pemrograman'
         ]);
 
+        Category::create([
+            'nama_kategori' => 'Novel',
+            'deskripsi' => 'Kategori buku cerita dan fiksi'
+        ]);
+
+        Category::create([
+            'nama_kategori' => 'Pendidikan',
+            'deskripsi' => 'Kategori buku pelajaran dan akademik'
+        ]);
     }
 }
